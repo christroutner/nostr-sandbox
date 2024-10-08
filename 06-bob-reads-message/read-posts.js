@@ -22,11 +22,11 @@ console.log(`Bob Public Key: ${bobPubKey}`)
 const psf = "wss://nostr-relay.psfoundation.info"
 const relays = [psf]
 
+// Connect to the relay
 const pool = RelayPool(relays)
-
 pool.on('open', relay => {
+	// Find encrypted messages (kind 4) that are tagged to bob.
 	relay.subscribe("REQ", {limit: 2, kinds:[4], "#p": [bobPubKey]})
-	// relay.subscribe("REQ", {limit: 2, kinds:[1], authors: [alicePubKey]})
 });
 
 pool.on('eose', relay => {
@@ -37,8 +37,8 @@ pool.on('event', async (relay, sub_id, ev) => {
 	console.log(ev)
 	console.log('encrypted message: ', ev.content)
 
+	// Decrypt the message
 	const msg = await nip04.decrypt(bobPrivKeyBin, alicePubKey, ev.content)
 
-	// const msg = decryptDm(bobPrivKeyBin, ev.content)
 	console.log(`decrypted message: `, msg)
 });
