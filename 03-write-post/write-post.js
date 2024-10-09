@@ -31,13 +31,15 @@ console.log(`eventTemplate: ${JSON.stringify(eventTemplate, null, 2)}`)
 
 // Sign the post
 const signedEvent = finalizeEvent(eventTemplate, alicePrivKeyBin)
+console.log('signedEvent: ', signedEvent)
 
 // Connect to a relay.
 const relay = await Relay.connect(psf)
 console.log(`connected to ${relay.url}`)
 
 // Publish the message to the relay.
-await relay.publish(signedEvent)
+const result = await relay.publish(signedEvent)
+console.log('result: ', result)
 
 // Close the connection to the relay.
 relay.close()
