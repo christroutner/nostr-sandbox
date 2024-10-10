@@ -1,0 +1,18 @@
+{
+  "name": "create-account",
+  "version": "1.0.0",
+  "main": "create-account.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@psf/bch-js": "6.8.0",
+    "base58-js": "2.0.0",
+    "nostr": "0.2.8",
+    "nostr-tools": "2.7.2"
+  },
+  "type": "module"
+}
