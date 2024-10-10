@@ -32,9 +32,9 @@ console.log('BCH addr: ', cashAddr)
 const privKey = bchjs.HDNode.toWIF(childNode)
 console.log('BCH private key (WIF format): ', privKey)
 
+// Extract the privaty key from the WIF, using this guide:
+// https://learnmeabitcoin.com/technical/keys/private-key/wif/
 const wifBuf = base58_to_binary(privKey)
-// console.log('wifBuf: ', wifBuf)
-
 const privBuf = wifBuf.slice(1,33)
 // console.log('privBuf: ', privBuf)
 
