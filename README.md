@@ -10,3 +10,5 @@ A series of JavaScript examples for interacting with Nostr protocol.
 - 06-bob-reads-message - Decrypt and read the message from example 05.
 - 07-read-post-by-event-id - Given the event ID of a post, retrieve that post.
 - 08-create-nostr-account-from-bch-priv-key - Given a Bitcoin private key in WIF format, generate a Nostr private/public key pair.
+- 10-post-topic - Post a message to a 'topic' that can be followed and posted to by many clients.
+- 11-read-post-by-topic - Read recent posts based on a 'topic'
