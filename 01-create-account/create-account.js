@@ -3,13 +3,18 @@
 */
 
 import { generateSecretKey, getPublicKey } from 'nostr-tools/pure'
-import { bytesToHex, hexToBytes } from '@noble/hashes/utils' // already an installed dependency
+import * as nip19 from 'nostr-tools/nip19'
+import { bytesToHex } from '@noble/hashes/utils' // already an installed dependency
 
-let sk = generateSecretKey() // `sk` is a Uint8Array
-let pk = getPublicKey(sk) // `pk` is a hex string
+const sk = generateSecretKey() // `sk` is a Uint8Array
+const nsec = nip19.nsecEncode(sk)
+const skHex = bytesToHex(sk)
 
-let skHex = bytesToHex(sk)
-// const pkHex = bytesToHex(pk)
+const pk = getPublicKey(sk) // `pk` is a hex string
+const npub = nip19.npubEncode(pk)
 
-console.log('private key: ', skHex)
-console.log('public key: ', pk)
+console.log('private key:', skHex)
+console.log('encoded private key:', nsec)
+console.log()
+console.log('public key:', pk)
+console.log('encoded public key:', npub)
