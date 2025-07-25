@@ -1,4 +1,7 @@
 /*
+  7/25/25 CT: This was some early experiments. This file will probably
+  be deleted in the future.
+
   This script experiments with the interplace of Nostr and BCH.
   If I have an npub and private key:
   1 - can I convert the npub to a public key?
