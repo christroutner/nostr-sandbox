@@ -22,3 +22,6 @@ A series of JavaScript examples for interacting with Nostr protocol.
 - 18-get-event-likes - Get a count of likes for an event ID (post)
 - 19-liking-url - Example to generate kind 17 'like' event for something other than an event ID. The primary  use case for this is 'liking' SLP tokens.
 - 20-get-url-likes - Given a URL, get a count on how many likes it has.
+- 21-create-chat-room - Create a [NIP 28](https://github.com/nostr-protocol/nips/blob/master/28.md) chat room by generating a Kind 40 event.
+- 22-update-room-metadata - Update the chat room metadata by generated a Kind 41 event.
+- 23-chat-message - Send a chat message to the chat room by generating a Kind 42 event.
